@@ -1,0 +1,15 @@
+sqlfluff:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: "{{ env_var('SNOWSQL_ACCOUNT') }}"
+      user: "{{ env_var('SNOWSQL_USER') }}"
+      password: "{{ env_var('SNOWSQL_PWD') }}"
+      role: "dev_{{ env_var('SNOWSQL_USER') }}"
+      warehouse: "dev_{{ env_var('SNOWSQL_USER') }}"
+      database: "dev_{{ env_var('SNOWSQL_USER') }}"
+      schema: analytics
+      query_tag: "dev_{{ env_var('SNOWSQL_USER') }}"
+      threads: 32
+      client_session_keep_alive: False
