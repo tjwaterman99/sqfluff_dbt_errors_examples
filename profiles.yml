@@ -3,13 +3,13 @@ sqlfluff:
   outputs:
     dev:
       type: snowflake
-      account: "{{ env_var('SNOWSQL_ACCOUNT') }}"
-      user: "{{ env_var('SNOWSQL_USER') }}"
-      password: "{{ env_var('SNOWSQL_PWD') }}"
-      role: "dev_{{ env_var('SNOWSQL_USER') }}"
-      warehouse: "dev_{{ env_var('SNOWSQL_USER') }}"
-      database: "dev_{{ env_var('SNOWSQL_USER') }}"
+      account: random
+      user: "{{ env_var('USER') }}"
+      password: "{{ env_var('USER') }}"
+      role: "{{ env_var('USER') }}"
+      warehouse: "{{ env_var('USER') }}"
+      database: "{{ env_var('USER') }}"
       schema: analytics
-      query_tag: "dev_{{ env_var('SNOWSQL_USER') }}"
+      query_tag: "{{ env_var('USER') }}"
       threads: 32
       client_session_keep_alive: False
